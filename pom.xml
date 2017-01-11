@@ -47,18 +47,19 @@
         </executions>
       </plugin>
 	  
+	  
 	  <plugin>
         <groupId>org.codehaus.mojo</groupId>
-        <artifactId>clirr-maven-plugin</artifactId>
-        <version>2.8</version>
-		<executions>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.12</version>
+        <executions>
           <execution>
-            <id>Before testing</id>
+            <id>Information</id>
             <phase>test</phase>
             <goals>
-              <goal>clirr</goal>
+			   <goal>cpu-count</goal>
             </goals>
-            <configuration>
+			<configuration>
               <outputDirectory>${project.build.directory}/dependencias</outputDirectory>
               <includeScope> runtime </includeScope> 
             </configuration>
@@ -85,6 +86,7 @@
       <scope>test</scope>
     </dependency>
 	
+	
 	<dependency>
      <groupId>log4j</groupId>
      <artifactId>log4j</artifactId>
@@ -92,4 +94,6 @@
      <scope>compile</scope>
 	</dependency>
   </dependencies>
+  
+  
 </project>
