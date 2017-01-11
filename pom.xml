@@ -49,6 +49,25 @@
 	  
 	  
 	  <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.7</version>
+        <executions>
+          <execution>
+            <id>Before testing</id>
+            <phase>test</phase>
+            <goals>
+              <goal>pmd</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/dependencias</outputDirectory>
+              <includeScope> runtime </includeScope> 
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+	  
+	  <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
         <version>1.12</version>
